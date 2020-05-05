@@ -1,0 +1,262 @@
+body {
+  font-size: 100%; }
+
+.cd-tabs.is-ended ul {
+  margin-bottom: 0; }
+
+#navbar {
+  margin-top: 75px; }
+
+.navbar {
+  background: url(../img/theme/header-bg.png) no-repeat center 0 #1b8fae; }
+
+.navbar-brand {
+  font-family: Gotham,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 250%;
+  font-weight: bold;
+  color: white !important; }
+
+.navbar-brand span {
+  font-family: Cambria,"Hoefler Text","Liberation Serif",Times,"Times New Roman",serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 115%; }
+
+.navbar-default .navbar-nav > li > a {
+  color: white; }
+
+.navbar-fixed-top {
+  border-width: 0; }
+
+.dropdown-menu {
+  border: 0 none; }
+
+.nav2 {
+  background: none repeat scroll 0 0 #e0e0e0;
+  height: 40px;
+  opacity: 0.5;
+  position: absolute; }
+
+#boxLinks {
+  padding-left: 0; }
+
+h1, .h1 {
+  background: #e0e0e0;
+  color: #666;
+  font-size: 130%;
+  margin: 0 0 40px 0;
+  padding: 10px 20px;
+  line-height: 20px; }
+
+h1 span {
+  font-size: 90%;
+  font-style: italic;
+  padding-left: 10px; }
+
+.page-header {
+  margin: 55px 0 20px; }
+
+.navbar {
+  min-height: inherit; }
+
+.text-muted {
+  color: #C7C7C7; }
+
+footer .container {
+  background: none; }
+
+.navbar-nav > hover {
+  background: #acebfb; }
+
+.cd-tabs-content li {
+  padding: 0; }
+
+.cd-tabs-content {
+  background: url(http://ilearn.med.monash.edu.au/physiology/images/arrow.png) no-repeat 0 40px; }
+
+.selected > div {
+  padding-top: 20px; }
+
+.selected > p {
+  margin: 0 !important;
+  padding: 10px; }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  background-color: #acebfb;
+  color: #333; }
+
+.selected div {
+  padding: 5px 0;
+  color: #666; }
+
+input {
+  width: 56px; }
+
+/*.selected button{background:#9c9c9c;padding:10px 20px;color:white;border:0;width:187px;margin-bottom:4px;}*/
+.cd-tabs-content li p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+  margin-top: 5px; }
+
+td {
+  vertical-align: middle;
+  padding: 0 3px !important;
+  font-size: 88%; }
+
+.cd-tabs-content li p {
+  font-size: 86%; }
+
+/*.legend table,.legend > div{background:transparent !important;height:82px !important;line-height:18px;opacity:1 !important;right:-190px !important;top:17px !important;width:190px !important;}
+.legend table{border:none !important;background-color:#e0e0e0 !important;}*/
+.cl {
+  clear: both; }
+
+.box1 {
+  float: left;
+  width: 220px; }
+
+.box2 {
+  padding-left: 220px !important; }
+
+/*RESPONSIVE*/
+@media (min-width: 1170px) {
+  body {
+    background: url(http://ilearn.med.monash.edu.au/physiology/images/carbon-fibre-bg.jpg) 0 100px repeat-x; }
+  .container {
+    background: url(http://ilearn.med.monash.edu.au/physiology/images/fmnhs-logo.png) no-repeat right 20px; } }
+
+@media (max-width: 768px) {
+  #navbar {
+    border: 0 none;
+    margin-top: 0; }
+  body > .container {
+    padding: 20px 15px 0; }
+  .navbar-brand {
+    font-size: 150%; }
+  .w3c > div > a {
+    font-size: 120%;
+    padding: 8px 20px; }
+  .navbar {
+    background: none #1b8fae; }
+  h1, .h1 {
+    font-size: 100%;
+    padding: 10px 20px;
+    line-height: 20px;
+    margin: 0 0 25px 0; }
+  .footer {
+    font-size: 80%; }
+  .cd-tabs-content {
+    background: url(http://ilearn.med.monash.edu.au/physiology/images/arrow.png) no-repeat 0 40px; }
+  .box1, .box2 {
+    float: none;
+    width: 100%;
+    padding-left: 0 !important; }
+  .cd-tabs {
+    padding-left: 15px; }
+  h1 {
+    margin-left: -15px; } }
+
+@media (max-width: 480px) {
+  body > .container {
+    padding: 55px 15px 0; }
+  .navbar-brand {
+    font-size: 150%;
+    height: 75px;
+    line-height: 22px;
+    width: 200px; }
+  .navbar-toggle {
+    margin-top: 120px; }
+  .nav2 {
+    width: 0; }
+  button {
+    margin-bottom: 33px !important; }
+  .navbar-toggle {
+    margin-top: 30px; }
+  .selected button {
+    margin-bottom: 4px !important; } }
+
+@media (min-width: 768px) {
+  body {
+    background: url(http://ilearn.med.monash.edu.au/physiology/images/carbon-fibre-bg.jpg) 0 125px repeat-x; }
+  .nav2 {
+    width: 100%; }
+  body > .container {
+    padding: 110px 15px 0; } }
+
+@media (max-width: 992px) {
+  .nav.navbar-nav {
+    font-size: 90%; }
+  .navbar-nav > li > a {
+    padding-left: 10px;
+    padding-right: 10px; } }
+
+@media (max-width: 960px) {
+  .cd-tabs-navigation a {
+    height: 40px;
+    padding-top: 15px; }
+  .nav.navbar-nav {
+    font-size: 90%; } }
+
+th, td {
+  padding: 5px !important;
+  text-align: center; }
+
+.better-active {
+  background-color: #acebfb;
+  color: #333 !important; }
+
+blockquote {
+  margin-left: 10px; }
+
+.selected ul {
+  margin-left: 10px !important; }
+
+.selected li {
+  margin-left: 5px;
+  list-style: square; }
+
+.text > li {
+  display: block; }
+
+.selected li {
+  font-size: 90%;
+  margin-left: 0;
+  padding: 10px;
+  background: url(http://ilearn.med.monash.edu.au/physiology/images/square.gif) 35px 5px no-repeat;
+  padding: 0 0 15px 55px; }
+
+em {
+  font-style: italic; }
+
+input[type='button']:disabled, button:disabled {
+  background-color: #d3d3d3; }
+
+option:disabled {
+  color: #d3d3d3; }
+
+.page-header {
+  margin: 55px 0 20px; }
+
+  // Footer
+html {
+  position: relative;
+  min-height:100%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: hsl(0, 0%, 15%);
+}
+.footer-text {
+  line-height: 20px;
+  width: 100%;
+  margin: 10px 0;
+  color: hsl(0, 0%, 80%);
+  text-align: center;
+}
+#duplicateFooter { // To ensure that the body will never overlap with the footer
+  position: relative;
+  opacity: 0;
+}

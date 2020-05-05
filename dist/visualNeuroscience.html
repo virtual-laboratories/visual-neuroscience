@@ -1,0 +1,317 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/neurophysTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name=description content="A suite of online simulations, or virtual experiments, to aid the teaching of physiology.">
+	<meta name=author content="Dr. Maria del Mar Quiroga">
+
+	<meta prefix="og: http://ogp.me/ns#" property="og:type" content="website" />
+	<meta prefix="og: http://ogp.me/ns#" property="og:title" content="Visual neuroscience experiments"/>
+	<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://ilearn.med.monash.edu.au/physiology/Neurophysiology/img/og/visual.jpg"/>
+	<meta prefix="og: http://ogp.me/ns#" property="og:description" content='"Record" from a motion sensitive neuron in visual areas of the brain.'/>
+	<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://ilearn.med.monash.edu.au/physiology/Neurophysiology/visualNeuroscience.html" />
+
+	<title>Visual neuroscience</title>
+	<link rel="stylesheet" href="css/all.css">
+	<style>
+	/* ---------- STIMULUS ---------- */
+	#stimulusMonitor {
+		width:70%;height:auto;
+		border: 24px solid black;
+		padding:0;
+		margin:0 15%;
+		background-color: #848484;
+	}
+	#controlBox {
+		width: 280px;
+		height: 200px;
+		background-color: #DFE0DD;
+		border-radius: 8px;
+		border: 1px solid;
+		margin: 20px auto;
+		vertical-align: top;
+	}
+	#tuningCurveGraph {
+		width:96%;height:auto;
+		margin: 10px 4% 0 0;
+	}
+	/* ---------- KNOBS ---------- */
+	#directionContainer{width:144px;height:180px;margin:0 10px;text-align:center;display:inline-block;vertical-align:middle;}
+	#directionContainer>h3{margin:0 0 5px 0;}#contrastContainer>h3{margin:0 0 5px 0;}
+	#knobDiv{background-image: url("img/visual/directionKnob.png");width:144px;height:144px;padding:0}
+	.knob{width:80px;height:90px;margin:0 auto}
+	canvas{margin-top: 32px;margin-left:8px}
+	#contrastContainer{text-align:center;display:inline-block;vertical-align:middle;}
+	#startStim {margin-top:20px}
+	#clearData {margin-top:40px}
+	#downloadData{margin-top:10px}
+	input,select{text-align:center;}
+	.svgContainer{position: relative;width: 100%;}
+	.svgContainer:before{content: "";display: block;padding-top: 70%;}
+	.svgContainer>div{position:absolute;top: 0;left: 0;bottom: 0;right: 0;}
+	#nameSeed {width: 200px}
+	#initMessage {font-size: 130%; color: red}
+	@media (min-width: 768px){
+		.content {padding: 75px 15px 0;}
+		body {background-position: 0 75px;}
+	}
+	@media (max-width: 1200px){
+		#topBanner{background:none;}
+	}
+	.ui-accordion .ui-accordion-content {overflow:hidden !important;}
+	</style>
+	<script src="js/all.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-66295238-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<!-- InstanceEndEditable -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container" id="topBanner">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Visual neuroscience <span>experiments</span></a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+			</div>
+		</div>
+	</nav>
+	<!-- Begin page content -->
+	<div class="container content">
+		<div class="page-header">
+			<div class="cd-tabs">
+				<div class="nav2"></div>
+				<nav>
+					<!-- InstanceBeginEditable name="Navigation tabs" -->
+					<ul class="cd-tabs-navigation">
+						<li><a data-content="background" class="selected" href="#0">Background</a></li>
+						<li><a data-content="tunCurve" href="#0">Simulation</a></li>
+					</ul>
+					<!-- InstanceEndEditable -->
+				</nav>
+				<!-- InstanceBeginEditable name="Content" -->
+				<ul class="cd-tabs-content">
+					<li class="selected" data-content="background">
+						<h1 class="heading">Visual cortical neurons</h1>
+						<iframe width="420" height="315" align="right" src="https://www.youtube.com/embed/Cw5PKV9Rj3o" frameborder="0" allowfullscreen style="margin-left:30px;margin-bottom:10px"></iframe>
+						<p> Sensory neurons encode information about stimuli in the timing,
+							and rate, of action potentials. Neurons in different areas of the
+							brain are sensitive to different stimulus properties. For example,
+							in primary visual cortex (V1), neuronal responses are strongly
+							affected by the orientation of a stimulus. For a single neuron,
+							different orientations evoke different rates of spiking; and
+							different neurons have different “preferred” orientations. The
+							video on the right
+							shows recordings made in the 1960s from the laboratory of David
+							Hubel and Torsten Wiesel, who first demonstrated orientation
+							selectivity in V1, and won a Nobel prize for related work on the
+							visual system. You can hear the amplified ‘spiking’ activity of a
+							single cortical neuron, and see the visual stimulus that has
+							evoked that activity. As you watch the video, think about the
+							properties of the stimulus that evokes the weakest and strongest
+							neuronal responses.
+						</p>
+						<p> In the middle temporal area (MT), neuronal responses are
+							strongly affected by orientation, but also by the direction and
+							speed of moving objects. While each direction evokes a different
+							average spiking rate, the responses to repetitions of the same
+							stimulus are surprisingly variable. A further complication is that
+							responses scale with contrast – larger responses are seen at
+							higher contrasts.
+						</p>
+						<p> This means that given the spiking responses of just one neuron,
+							it is impossible to determine what stimulus was presented. For
+							example, a spiking rate of 30 spikes in a second might be evoked
+							by a fast, high contrast stimulus moving upwards, or a slow, low
+							contrast stimulus moving to the right. The brain therefore relies
+							on populations of neurons to reliably encode stimulus features.
+						</p>
+						<p> In this simulation, you will quantify how the responses of a
+							typical neuron in MT depend on motion direction, contrast, and
+							some other unrevealed factors. This can be used to assess how much
+							information a neuron conveys about the stimulus, and the
+							reliability of that information. We can then infer how populations
+							of neurons work together to accurately encode a diverse range of
+							stimuli.
+						</p>
+					</li>
+					<li data-content="tunCurve">
+						<h1 class="heading">Tuning curves</h1>
+						<div id="accordion">
+							<h3>Instructions</h3>
+							<div>
+								<p> In this simulation you will "record" from a neuron in area MT.
+									Please enter your name in the following box and when you're
+									ready press "Initialise neuron":
+									<input id="nameSeed" type="text">
+									<input id="submitSeed" type="submit" value="Initialise neuron">
+									<span id="initMessage"></span>
+								</p>
+								<p> This will generate a neuron with unique tuning properties.
+									If you return to this page, enter the same name
+									and you will be able to "record"
+									from the same neuron.
+								</p>
+								<p> In the <strong>Experiment</strong> tab below, the left panel
+									represents the visual stimulus that the neuron is responding
+									to, in this case a moving grating. You can control the
+									direction and contrast of this grating; when you press “Start”,
+									the grating on the stimulus screen will move in the direction
+									you selected for one second.
+								</p>
+								<p> The oscilloscope on the top right shows the amplified
+									voltage trace recorded extracellularly from an electrode close
+									to the cell body of the neuron. Each of the near-vertical
+									lines represents an action potential. If you zoomed in on one
+									of these action potentials, what would it look like? What is
+									the difference between an intracellular and an extracellular
+									recording?
+								</p>
+								<p> If your speakers are on, you will also be able to hear the
+									neuron’s activity. Below the oscilloscope is a graph that
+									automatically plots the number of spikes fired by the neuron
+									on each trial. The data for each contrast will be coloured
+									differently, according to the legend on the right. By clicking
+									on a contrast legend, you can hide/show the data that you have
+									collected for that contrast.
+								</p>
+								<p> To download the data for further analysis, use the
+									<strong>Download data</strong> tab.
+								</p>
+							</div>
+							<h3>Experiment</h3>
+							<div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<div class="svgContainer">
+										<div id="stimulusMonitor"></div>
+									</div>
+									<div id="controlBox">
+										<div id="directionContainer">
+											<h3>Direction</h3>
+											<div class="knob" id="knobDiv">
+												<input class="knob" id="directionDial" value="0" data-linecap="round">
+											</div>
+										</div>
+										<div id="contrastContainer">
+											<h3>Contrast</h3>
+											<select id="contrast" size="1">
+												<option value="0">0%</option>
+												<option value="2">20%</option>
+												<option value="4">40%</option>
+												<option value="6">60%</option>
+												<option value="8">80%</option>
+												<option value="10" selected>100%</option>
+											</select>
+										</br>
+										<button id="startStim" type="button">Start</button>
+										</br>
+										<button id="clearData" type="button">Clear data</button>
+									</div>
+
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div style="margin:30px 5%">
+									<div class="oscilloscope"></div>
+								</div>
+								<div class="svgContainer">
+									<div id="tuningCurveGraph"></div>
+								</div>
+							</div>
+						</div>
+						<h3>Download data</h3>
+						<div>
+							<p> Now that you've understood the procedure for mapping the tuning
+								curve of a direction sensitive neuron, choose the type of data
+								you want to download, the details of the experimental
+								paradigm (such as which directions and contrasts you will be
+								showing), and how many repetitions you want to perform for each
+								parameter combination. Then download the data
+								to your computer for further analysis.
+							</p>
+							<div>
+								<p> Type of data: &nbsp;
+								<select id="typeData" size="1">
+									<option value="1">-------  Please select  -------</option>
+									<!--<option value="2">Mean and standard deviation</option>-->
+									<option value="3">Spike counts per trial</option>
+									<option value="4">Spike times in trial</option>
+								</select>
+								<br>
+								Direction(s): &nbsp;
+								<select id="directionsData" size="1">
+									<option value="0">0°</option>
+									<option value="1">30°</option>
+									<option value="2">60°</option>
+									<option value="3">90°</option>
+									<option value="4">120°</option>
+									<option value="5">150°</option>
+									<option value="6">180°</option>
+									<option value="7">210°</option>
+									<option value="8">240°</option>
+									<option value="9">270°</option>
+									<option value="10">300°</option>
+									<option value="11">330°</option>
+									<option value="12" selected>All</option>
+								</select>
+								<br>
+								Contrast(s): &nbsp;
+								<select id="contrastData" size="1">
+									<option value="0">0%</option>
+									<option value="1">20%</option>
+									<option value="2">40%</option>
+									<option value="3">60%</option>
+									<option value="4">80%</option>
+									<option value="5" selected>100%</option>
+									<option value="6">All</option>
+								</select>
+								<br>
+								Number of trials (for each direction/contrast combination): &nbsp;
+								<input id="nrRepeats" type="number" value="1" name="repeats" min="1" max="200">
+								&nbsp;
+								<br>
+								<button id="downloadData" type="button">Download data</button>
+							</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<script src="js/D3/directionTuning.js"></script>
+			<!-- InstanceEndEditable -->
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<footer class="footer">
+	<div class="container">
+		<p class="footer-text">
+			© 2017 Faculty of Medicine, Nursing and
+			Health Sciences, Monash University. Available under
+			<a href="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC 4.0</a>
+			<br>
+			<br>
+			Developed by Dr. Maria del Mar Quiroga.
+			Questions and comments to maria.quiroga@monash.edu
+		</p>
+	</div>
+</footer>
+<footer id="duplicateFooter" class="footer">
+	<div class="container">
+		<p class="footer-text"> © 2017 Faculty of Medicine, Nursing and Health Sciences, Monash University. Available under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC 4.0</a> <br> <br> Developed by Dr. Maria del Mar Quiroga. Questions and comments to maria.quiroga@monash.edu </p>
+	</div>
+</footer>
+</body>
+<!-- InstanceEnd --></html>
